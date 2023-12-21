@@ -23,7 +23,8 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
-builder.Services.AddDbContext<AppDbContext>(x => {
+builder.Services.AddDbContext<AppDbContext>(x => 
+{
     x.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"),option =>
     {
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);

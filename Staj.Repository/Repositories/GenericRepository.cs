@@ -14,10 +14,10 @@ namespace Staj.Repository.Repositories
         protected readonly AppDbContext _appDbContext;
         private readonly DbSet<T> _dbSet;
 
-        public GenericRepository(AppDbContext appDbContext, DbSet<T> dbSet)
+        public GenericRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
-            _dbSet = appDbContext.Set<T>();
+            _dbSet = _appDbContext.Set<T>();
         }
 
         public async Task AddAsync(T entity)
