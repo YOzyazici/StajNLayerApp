@@ -4,6 +4,8 @@ using Staj.Core.Dtos;
 
 namespace Staj.API.Base
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CustomBaseController : ControllerBase
     {
         [NonAction]
